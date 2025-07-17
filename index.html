@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+    
+    
+</head>
+<body>
+    <section class="heading">
+        <h1 id="wavyText">Resume Builder</h1>
+    </section>
+
+    <section class="intro">
+        <h2 id="wavyIntro">Enter your information so Resume Builder can process your information and create your CV</h2>
+    </section>
+
+    <section class="cv-info">
+        <section class="personal-info">
+            <h3>Personal Information</h3><br>
+            <form>
+            <label>Full Name</label>
+            <input type="text" name="full_name" placeholder="Enter your full name" required><br>
+
+            <label>Email</label>
+            <input type="email" name="email" placeholder="Enter your email address" required><br>
+
+            <label>Phone Number</label>
+            <input type="tel" name="phone" placeholder="Enter your phone number" required><br>
+
+            <label>Location</label>
+            <input type="text" name="location" placeholder="Enter your location" required><br>
+
+            <label>LinkedIn Profile</label>
+            <input type="url" name="linkedin" placeholder="Enter your LinkedIn profile URL"><br>
+
+            <label>GitHub Profile/Website URL</label>
+            <input type="url" name="github" placeholder="Enter your GitHub profile URL" required><br>
+
+            <label>Professional Summary</label>
+            <textarea name="summary" rows="5" placeholder="EG - A results-driven software developer with 3+ years of experience designing, developing, and deploying full-stack web applications. Skilled in JavaScript, Python, and modern frameworks like React and Node.js. Passionate about building user-centric solutions, optimizing performance, and writing clean, maintainable code. Proven ability to collaborate with cross-functional teams and deliver projects on time in fast-paced environments."></textarea><br>
+            </form>
+        </section>
+
+        <section class="experience-skills">
+            <div class="work-experience">
+                <h3>Work Experience, Qualifications and Skills</h3><br>
+                <form>
+                    <label for="experienceInput">Work Experience:</label>
+                    <div class="input-group">
+                        <input type="text" id="experienceInput" placeholder="e.g. Junior Developer at DevCo">
+                        <button type="button" id="addExperienceBtn">+</button>
+                    </div>
+                    <div class="experience-container" id="store-experience"></div><br>
+
+                    <label for="educationInput">Education:</label>
+                    <div class="education">
+                        <input type="text" id="educationInput" placeholder="e.g. BSc in Computer Science at CPUT">
+                        <button type="button" id="addEducationBtn">+</button>
+                    </div>
+                    <div class="education-container" id="store-education"></div><br>
+
+                    <label for="skillsInput">Skills:</label>
+                    <div class="skills">
+                        <input type="text" id="skillsInput" placeholder="e.g. JavaScript, Python, HTML, CSS">
+                        <button type="button" id="addSkillsBtn">+</button>
+                    </div>
+                    <div class="skills-container" id="store-skills"></div><br>
+
+                    <label for="certificationsInput">Certifications:</label>
+                    <div class="certifications">
+                        <input type="text" id="certificationsInput" placeholder="e.g. AWS Certified Solutions Architect">
+                        <button type="button" id="addCertificationsBtn">+</button>
+                    </div>
+                    <div class="certifications-container" id="store-certifications"></div><br>
+                </form>
+            </div>
+        </section>
+    </section>
+
+    <section class="generate-section">
+        <button id="generateBtn">Generate CV</button>
+        
+    </section>
+
+    <section id="cv-preview" class="iframe-preview">
+        <p id="scroll-instruction">Scroll Further down to see more previews</p>
+        <h3>Preview 1</h3>
+        <iframe id="codePreview1" style="width: 100%; border: none;"></iframe>
+        <button id="downloadOdfBtn1">Download as ODF</button>
+
+        <h3>Preview 2</h3>
+        <iframe id="codePreview2" style="width: 100%; border: none;"></iframe>
+        <button id="downloadOdfBtn2">Download as ODF</button>
+
+        <h3>Preview 3</h3>
+        <iframe id="codePreview3" style="width: 100%; border: none;"></iframe>
+        <button id="downloadOdfBtn3">Download as ODF</button>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

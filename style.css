@@ -1,0 +1,282 @@
+.body{
+    margin:0;
+    width:100%;
+
+}
+.heading {
+  position: relative;
+  text-align: center;
+  background-image: url("oceanbg.webp");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  overflow: hidden; /* ensures overlay stays contained */
+}
+.heading::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(255, 255, 255, 0.4); /* white overlay with 40% opacity */
+  pointer-events: none; /* so it doesn’t block clicks */
+  z-index: 0; /* behind text */
+}
+
+.heading {
+  text-align: center;
+}
+
+.heading h1 {
+  font-family: Arial, sans-serif;
+  font-size: 3rem;
+  font-weight: bold;
+  display: inline-block;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  -webkit-background-clip: text;
+  
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.heading h1 span {
+  display: inline-block;
+  animation: waveLetter 2.5s ease-in-out infinite;
+  background: inherit;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+@keyframes waveLetter {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.intro h2{
+    text-align: center;
+    /* color: #555; */
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    -webkit-background-clip: text;
+  
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+    font-size: 28px;
+}
+
+
+
+
+.cv-info{
+    width:100%;
+    display: flex;
+
+    background-color: #f0f0f0;
+    
+}
+
+.personal-info{
+    
+    width:50%;
+    display:flex;
+    flex-direction: column;
+}
+
+.personal-info h3, .work-experience h3{
+    font-family: Arial, sans-serif;
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.personal-info form, .work-experience form{
+    display: flex;
+    width:100%;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.personal-info form label,.work-experience form label, .iframe-preview p{
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    color:gray;
+}
+
+.personal-info form input, .work-experience form input{
+    width: 70%;
+    height:25px;
+    border-radius: 5px;
+    border:1px solid gray;;
+}   
+
+.experience-skills{
+    width:50%;
+    display:flex;
+    justify-content: center;
+    text-align:center;
+}
+
+.input-group, .education, .skills, .experience, .certifications{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:5px;
+}
+
+
+#addExperienceBtn, #addEducationBtn, #addSkillsBtn, #addCertificationsBtn{
+    height:30px;
+    border: none;
+    background-color:yellowgreen;
+    width:30px;
+    border-radius:6px 6px 6px 6px;
+}
+#addExperienceBtn:hover, #addEducationBtn:hover, #addSkillsBtn:hover, #addCertificationsBtn:hover{
+    background-color: #4CAF50;
+    color: white;
+    cursor:pointer;
+}
+
+.experience-container, .education-container, .skills-container, .certifications-container {
+    display:grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap:5px;
+    width: 100%;
+}
+
+.experienceList, .educationList, .skillsList, .certificationsList {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 7px 7px 7px 7px;
+    background-color:lightblue;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+
+}
+
+.removeBtn{
+    display:flex;
+    align-items: start;
+    justify-content: end;
+    background-color:transparent;
+    border:none;
+}
+
+.removeBtn:hover{
+    color: red;
+    cursor:pointer;
+}
+iframe{
+    width: 100%;
+    border: none;
+    width: 100%;
+    margin-bottom:0;
+    display:flex;
+    justify-content: center;
+    
+}
+
+.personal-info form textarea{
+    min-width: 70%;
+    max-width: 70%;
+    min-height: 120px;
+    max-height:300px;
+    
+}
+
+.generate-section{
+    display: flex;
+    justify-content: center;
+    background-color:#f0f0f0 ;
+}
+
+#generateBtn{
+    width: 200px;
+    height: 40px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    margin-bottom:10px;
+}
+
+#generateBtn:hover{
+    background-color: #4CAF50;
+}
+
+.iframe-preview{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: lightblue;
+    margin:0;
+}
+
+.iframe-preview h3{
+    font-family: Arial, sans-serif;
+    font-size: 22px;
+    text-align: center;
+    color:darkslategray
+}  
+
+
+#generateBtn:active {
+  transform: scale(0.95);
+}
+
+#generateBtn.animating::after {
+  content: "🚀 Generating...";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: bold;
+  animation: pulseGlow 1s infinite;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 8px 12px;
+  border-radius: 8px;
+  z-index: 1;
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 5px #fff, 0 0 10px #6cf, 0 0 20px #6cf;
+  }
+  50% {
+    box-shadow: 0 0 20px #fff, 0 0 30px #6cf, 0 0 40px #6cf;
+  }
+  100% {
+    box-shadow: 0 0 5px #fff, 0 0 10px #6cf, 0 0 20px #6cf;
+  }
+}
+
+#downloadOdfBtn1, #downloadOdfBtn2, #downloadOdfBtn3{
+    height:45px;
+    border: none;
+    background-color:yellowgreen;
+    width:170px;
+    border-radius:6px 6px 6px 6px;
+    margin:0;
+    transition: 0.3s ease  ;
+    font-size:16px;
+}
+
+#downloadOdfBtn1:hover, #downloadOdfBtn2:hover, #downloadOdfBtn3:hover{
+    background-color: #4CAF50;
+    color: white;
+    cursor:pointer;
+}
